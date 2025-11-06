@@ -235,3 +235,7 @@ async function listGroups(sock) {
 }
 
 start().catch(err => console.error('❌ ERROR FATAL:', err))
+
+// === KEEP ALIVE UNTUK RENDER.COM ===
+import http from 'http'
+http.createServer((req, res) => res.end('Bot is running')).listen(process.env.PORT || 8080)
